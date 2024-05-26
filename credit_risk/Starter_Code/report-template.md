@@ -2,26 +2,35 @@
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+The purpose of this analysis is to create and analyze a machine learning model that will be used to predict the creditworthiness of borrowers.
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+* The financial infomration used includes information about the borrowor,such as income, debt_to income, number of account, total debt; loan information, such as amount of loan, interest rate, status.
+
+* The model is trying to predict 2 classes: healthy loan (0) and high risk loan (1). Value counts aer as follow:
+ loan_status
+0    75036
+1     2500
+
+* The machine learning process started with data cleaning and some EDA to view the data being worked with. Next, I selected the X and y features for testing, split the test and training datasets, fit the model and finally worked with the test sample to evaluate the accuracy and other metrics.
+
+* Since there was a binary component within the data (healthy or not healthy) a LogisticRegression model was used. 
 
 ## Results
+precision    recall  f1-score   support
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+           0       1.00      0.99      1.00     18765
+           1       0.84      0.94      0.89       619
+
+    accuracy                           0.99     19384
+   macro avg       0.92      0.97      0.94     19384
+weighted avg       0.99      0.99      0.99     19384
+
 
 * Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+    * Precision: 92%
+    * Recall: 97% 
+    * Accuracy: 0.99
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+The machine learning model that was produced his a high accuracy and recall/precision rate. It is a good model to predict the creditworthiness of customers.
